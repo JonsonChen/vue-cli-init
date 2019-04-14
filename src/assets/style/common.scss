@@ -1,0 +1,8 @@
+// 公共的样式
+/**
+  转化px为rem
+  调用： width: px2rem(175);
+*/
+@function px2rem( $px, $base-font-size: 37.5 ) {
+  @return ( $px/$base-font-size ) * 1rem
+}

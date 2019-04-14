@@ -1,0 +1,20 @@
+// 混入样式
+// 设置阴影
+@mixin box-shadow($shadow...) {
+    -webkit-box-shadow:$shadow;
+    -moz-box-shadow:$shadow;
+    -o-box-shadow:$shadow;
+    box-shadow:$shadow;
+}
+// 圆角
+@mixin border-radius($radius) {
+    -webkit-border-radius:$radius;
+    -moz-border-radius:$radius;
+    -o-border-radius:$radius;
+    border-radius:$radius;
+}
+@mixin border($b) {
+    border: $b;
+    border-color: #333;
+    border-style: dashed
+}
