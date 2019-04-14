@@ -1,9 +1,9 @@
 let webpack = require('webpack')
 let pluginList = []
-if (process.env.NODE_ENV === "development") {
-  pluginList = []
-} else {
+if (process.env.NODE_ENV === "test") {
   pluginList = [new webpack.HotModuleReplacementPlugin()]
+} else {
+  pluginList = []
 }
 
 module.exports = {
