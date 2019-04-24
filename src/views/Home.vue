@@ -49,9 +49,10 @@ export default {
   color: $defaultColor;
 }
 .border {
-  @include border(2px)
+  @include border(1px, solid, #e7e7e7);
+  @include marginPair(10px, 2px)
 }
 .torem {
-  font-size: px2rem(100)
+  font-size: px2rem(24)
 }
 </style>

@@ -13,8 +13,12 @@
     -o-border-radius:$radius;
     border-radius:$radius;
 }
-@mixin border($b) {
-    border: $b;
-    border-color: #333;
-    border-style: dashed
+@mixin border($b, $genre, $color) {
+    border: $b $genre $color;
+}
+@mixin marginPair($tb, $lr) {
+    margin: $tb $lr;
+}
+@mixin paddingPair($tb, $lr) {
+    padding: $tb $lr;
 }
