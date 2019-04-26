@@ -30,6 +30,7 @@ export default {
   },
   created () {
     console.log(this.userInfo)
+    console.log(this.$config)
     this.$http.loginRegister.login({ type: 'yuantong', postid: '222222' }).then(res => {
       this.testHtml = res
     })
