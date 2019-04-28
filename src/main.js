@@ -15,7 +15,17 @@ Vue.config.productionTip = false
 Vue.prototype.$config = EnvConfig
 Vue.prototype.$http = Http
 Vue.prototype.$util = Util
-console.log('this.$store.state', store.state)
+console.log('$config', EnvConfig)
+console.log('$util', Util)
+console.log('$store.state', store.state)
+
+router.beforeEach((to, from, next) => {
+  console.log('router', to, from)
+  if (to.meta.title) {
+    document.title = to.meta.title
+  }
+  next()
+})
 new Vue({
   router,
   store,

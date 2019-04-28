@@ -1,12 +1,30 @@
 <template>
-  <div id="app" class="tc">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div id="app">
+    <div v-if="this.$store.state.login.loginDatas">
+      <el-container>
+        <el-header><Header/></el-header>
+        <el-container style="display: flex;">
+          <el-aside width="200px"><Aside msg="We AppWe AppWe AppWe AppWe AppWe App"/></el-aside>
+          <el-container>
+            <el-main><router-view></router-view></el-main>
+          </el-container>
+        </el-container>
+      </el-container>
     </div>
-    <router-view/>
+    <div v-else>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
+<script>
+import Aside from '@/components/Aside.vue'
+import Header from '@/components/Header.vue'
+export default {
+  components: {
+    Aside, Header
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 @import "assets/style/reset";

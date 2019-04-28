@@ -4,20 +4,15 @@
     <h1 class="loginDatas border torem">loginDatas: {{userInfo}}</h1>
     <el-button @click="loginAction">loginAction</el-button>
     <el-button @click="logOutAction">logOutAction</el-button>
-    <HelloWorld msg="We AppWe AppWe AppWe AppWe AppWe App"/>
-    <div v-html="testHtml"></div>
+    <!-- <div v-html="testHtml"></div> -->
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'home',
-  components: {
-    HelloWorld
-  },
   data () {
     return {
       testHtml: null
@@ -29,8 +24,6 @@ export default {
     }
   },
   created () {
-    console.log(this.userInfo)
-    console.log(this.$config)
     this.$http.loginRegister.login({ type: 'yuantong', postid: '222222' }).then(res => {
       this.testHtml = res
     })
