@@ -34,6 +34,7 @@ export default {
     },
     logOutAction () {
       this.$store.dispatch('login/logOutAction', false)
+      this.$router.replace({ path: '/login' })
     }
   }
 }
