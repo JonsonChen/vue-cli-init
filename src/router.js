@@ -1,9 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from './views/loginRegister/Login.vue'
-import Register from './views/loginRegister/Register.vue'
-import Home from './views/Home.vue'
-import About from './views/About.vue'
 
 Vue.use(Router)
 
@@ -14,7 +10,7 @@ export default new Router({
     {
       path: '/login',
       name: 'login',
-      component: Login,
+      component: () => import('./views/loginRegister/Login.vue'),
       meta: {
         title: '登陆'
       }
@@ -22,7 +18,7 @@ export default new Router({
     {
       path: '/register',
       name: 'register',
-      component: Register,
+      component: () => import('./views/loginRegister/Register.vue'),
       meta: {
         title: '登陆'
       }
@@ -30,7 +26,7 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home,
+      component: () => import('./views/Home.vue'),
       meta: {
         title: '首页'
       }
@@ -38,7 +34,7 @@ export default new Router({
     {
       path: '/about',
       name: 'about',
-      component: About,
+      component: () => import('./views/About.vue'),
       meta: {
         title: '关于'
       }

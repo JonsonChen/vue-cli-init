@@ -1,6 +1,9 @@
 <template>
-  <div id="app">
-    <div v-if="this.$store.state.login.loginDatas">
+  <div>
+    <div v-if="isFullView">
+      <router-view></router-view>
+    </div>
+    <div v-else>
       <el-container>
         <el-header><Header/></el-header>
         <el-container style="display: flex;">
@@ -11,9 +14,6 @@
         </el-container>
       </el-container>
     </div>
-    <div v-else>
-      <router-view></router-view>
-    </div>
   </div>
 </template>
 <script>
@@ -22,6 +22,18 @@ import Header from '@/components/Header.vue'
 export default {
   components: {
     Aside, Header
+  },
+  computed: {
+    isFullView () {
+      if (this.$route.name === 'login' || this.$route.name === 'register') {
+        return true
+      } else {
+        return false
+      }
+    }
+  },
+  created () {
+    console.log('this.$route', this.$route)
   }
 }
 </script>
